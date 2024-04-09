@@ -1,0 +1,11 @@
+<h1>Prompt</h1>
+<p><%= @prompt %></p>
+<%= form_with(url: "/prompt", method: "post") do %>
+  <%= text_field_tag :user_input, nil, placeholder: "Type here..." %>
+  <%= submit_tag "Send" %>
+<% end %>
+
+<% if @response.present? %>
+  <h2>Response:</h2>
+  <p><%= @response %></p>
+<% end %>
